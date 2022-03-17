@@ -488,8 +488,15 @@ static void _Task_Emerg_Stop( void *pvParameters ){
 			//Inside an infinite loop, flash the Red light on RGB led at 2Hz.
 			//The Object Instance for RGB led is "Red_RGBInst".
 
+			// Stepper_setCurrentPositionInSteps(0);
+			sequenceIndex = -1;
 
-
+			while (1) {
+				XGpio_DiscreteWrite(&Red_RGBInst, 1, 4);
+				vTaskDelay(pdMS_TO_TICKS(250));
+				XGpio_DiscreteWrite(&Red_RGBInst, 1, 0);
+				vTaskDelay(pdMS_TO_TICKS(250));
+			}
 			/**********************************************************************************************/
 		}
 		// wait 10ms (poll at 100Hz)
