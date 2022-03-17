@@ -409,7 +409,7 @@ static void _Task_Motor( void *pvParameters ){
 
 		/**********************************************************************************************/
 		// get the motor parameters from the queue (FIFO1). The structure "decision_parameters" to store the received queue has been declared in this task for you.
-
+		xQueueReceive(xQueue_FIFO1, &read_motor_parameters_from_queue, portMAX_DELAY);
 
 		/**********************************************************************************************/
 
@@ -427,7 +427,26 @@ static void _Task_Motor( void *pvParameters ){
 		// Find the function from the driver code that will help to move the motor by an absolute number of target steps.! The function is mentioned in the handout as well.
 		// Once the motor reaches the desired position, disable the motor and then execute the dwell time delay using the conventional vTaskDelay().
 
+//		motor_parameters.currentposition_in_steps = 0;
+//		motor_parameters.rotational_speed = 500;
+//		motor_parameters.rotational_acceleration = 150;
+//		motor_parameters.rotational_deceleration = 150;
 
+		Stepper_setCurrentPositionInSteps(motor_parameters.currentposition_in_steps);
+		Stepper_setSpeedInStepsPerSecond(motor_parameters.rotational_speed);
+		Stepper_setAccelerationInStepsPerSecondPerSecond(motor_parameters.rotational_acceleration);
+		Stepper_setDecelerationInStepsPerSecondPerSecond(motor_parameters.rotational_deceleration);
+
+		for (int i = 0; i < sequenceIndex; i++) {
+			// move to destination
+			Stepper_moveToPositionInSteps(positionSequence[i][0]);
+
+			// disable and delay
+			Stepper_disableMotor();
+			TickType_t ticks_to_delay = pdMS_TO_TICKS(positionSequence[i][1]);
+			vTaskDelay(ticks_to_delay);
+
+		}
 
 		/**********************************************************************************************/
 
