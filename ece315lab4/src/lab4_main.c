@@ -78,8 +78,9 @@ decision_parameters motor_parameters;
 int parameters_flag = 0;
 
 int positionSequence[SEQUENCE_LENGTH][2] = {{NO_OF_STEPS_PER_REVOLUTION_FULL_DRIVE, 0}}; // position-delay array
-int sequenceIndex = 0; // the number of position-delay sequences
+volatile int sequenceIndex = 0; // the number of position-delay sequences
 int loop_count = 1; // the number of times to repeat the position-delay sequence
+long current_target;
 
 //----------------------------------------------------
 // MAIN FUNCTION
@@ -427,19 +428,15 @@ static void _Task_Motor( void *pvParameters ){
 		// Find the function from the driver code that will help to move the motor by an absolute number of target steps.! The function is mentioned in the handout as well.
 		// Once the motor reaches the desired position, disable the motor and then execute the dwell time delay using the conventional vTaskDelay().
 
-//		motor_parameters.currentposition_in_steps = 0;
-//		motor_parameters.rotational_speed = 500;
-//		motor_parameters.rotational_acceleration = 150;
-//		motor_parameters.rotational_deceleration = 150;
-
 		Stepper_setCurrentPositionInSteps(motor_parameters.currentposition_in_steps);
 		Stepper_setSpeedInStepsPerSecond(motor_parameters.rotational_speed);
 		Stepper_setAccelerationInStepsPerSecondPerSecond(motor_parameters.rotational_acceleration);
 		Stepper_setDecelerationInStepsPerSecondPerSecond(motor_parameters.rotational_deceleration);
 
 		for (int i = 0; i < sequenceIndex; i++) {
+			current_target = positionSequence[i][0];
 			// move to destination
-			Stepper_moveToPositionInSteps(positionSequence[i][0]);
+			Stepper_moveToPositionInSteps(current_target);
 
 			// disable and delay
 			Stepper_disableMotor();
@@ -470,17 +467,18 @@ static void _Task_Emerg_Stop( void *pvParameters ){
 		/**********************************************************************************************/
 		//Read the Button value inside the variable "btnState"
 		//i.e., poll the button
-
+		btnState = XGpio_DiscreteRead(&BTNInst, 1);
 
 		/**********************************************************************************************/
 
 		// if the button is pressed, increase the counter. Else reset it to zero.
-		if(btnState == 1) pressedCount ++;
+		if(btnState == 1) {
+			pressedCount ++;
+		}
 		else pressedCount = 0;
 
 		// if the button is pressed for 3 consecutive polls
 		if(pressedCount >= 3){
-
 			/**********************************************************************************************/
 			//Set the "current stepper position" to the position at which it must now begin decelerating.
 			//There is a stepper driver function for adjusting the current position in steps and you have used in the _Task_Motor().
@@ -488,15 +486,25 @@ static void _Task_Emerg_Stop( void *pvParameters ){
 			//Inside an infinite loop, flash the Red light on RGB led at 2Hz.
 			//The Object Instance for RGB led is "Red_RGBInst".
 
-			// Stepper_setCurrentPositionInSteps(0);
-			sequenceIndex = -1;
+
+			Stepper_setCurrentPositionInSteps(current_target);
+			sequenceIndex = 0;
+
+			Stepper_disableMotor();
+
+			// set the other tasks priorities to lower than idle (don't let them happen again)
+			vTaskDelete(xMotortask);
+			vTaskDelete(xUarttask);
+
+			xil_printf("Emergency Stop");
 
 			while (1) {
-				XGpio_DiscreteWrite(&Red_RGBInst, 1, 4);
+				XGpio_DiscreteWrite(&Red_RGBInst, 1, 7);
 				vTaskDelay(pdMS_TO_TICKS(250));
 				XGpio_DiscreteWrite(&Red_RGBInst, 1, 0);
 				vTaskDelay(pdMS_TO_TICKS(250));
 			}
+
 			/**********************************************************************************************/
 		}
 		// wait 10ms (poll at 100Hz)

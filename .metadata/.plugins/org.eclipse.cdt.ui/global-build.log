@@ -253,3 +253,694 @@ make pre-build main-build
 a9-linaro-pre-build-step
 ' '
 make: Nothing to be done for 'main-build'.
+16:15:39 **** Auto Build of configuration Debug for project ece315lab4 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+16:16:05 **** Incremental Build of configuration Debug for project ece315lab4 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+16:19:35 **** Auto Build of configuration Debug for project ece315lab4 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/lab4_main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/lab4_main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ece315lab4_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/lab4_main.d" -MT"src/lab4_main.o" -o "src/lab4_main.o" "../src/lab4_main.c"
+../src/lab4_main.c: In function '_Task_Emerg_Stop':
+../src/lab4_main.c:473:10: warning: implicit declaration of function 'XPIO_DiscreteRead'; did you mean 'XGpio_DiscreteRead'? [-Wimplicit-function-declaration]
+   while (XPIO_DiscreteRead(&BTNInst, 1) != 0001) {}
+          ^~~~~~~~~~~~~~~~~
+          XGpio_DiscreteRead
+'Finished building: ../src/lab4_main.c'
+' '
+'Building target: ece315lab4.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ece315lab4_bsp/ps7_cortexa9_0/lib -o "ece315lab4.elf"  ./src/lab4_main.o ./src/stepper.o ./src/uart_initialize.o   -lm -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group
+c:/xilinx/sdk/2019.1/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/8.2.0/../../../../arm-none-eabi/bin/ld.exe: ./src/lab4_main.o: in function `_Task_Emerg_Stop':
+C:\ECE_315\ece315lab4\lab_4_v0\lab_4_v0.sdk\ece315lab4\Debug/../src/lab4_main.c:473: undefined reference to `XPIO_DiscreteRead'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:41: ece315lab4.elf] Error 1
+16:19:45 **** Auto Build of configuration Debug for project ece315lab4 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/lab4_main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/lab4_main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ece315lab4_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/lab4_main.d" -MT"src/lab4_main.o" -o "src/lab4_main.o" "../src/lab4_main.c"
+'Finished building: ../src/lab4_main.c'
+' '
+'Building target: ece315lab4.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ece315lab4_bsp/ps7_cortexa9_0/lib -o "ece315lab4.elf"  ./src/lab4_main.o ./src/stepper.o ./src/uart_initialize.o   -lm -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group
+'Finished building target: ece315lab4.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size ece315lab4.elf  |tee "ece315lab4.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 105108	   3540	  89648	 198296	  30698	ece315lab4.elf
+'Finished building: ece315lab4.elf.size'
+' '
+16:19:50 **** Incremental Build of configuration Debug for project ece315lab4 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+16:21:01 **** Auto Build of configuration Debug for project ece315lab4 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/lab4_main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/lab4_main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ece315lab4_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/lab4_main.d" -MT"src/lab4_main.o" -o "src/lab4_main.o" "../src/lab4_main.c"
+'Finished building: ../src/lab4_main.c'
+' '
+'Building target: ece315lab4.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ece315lab4_bsp/ps7_cortexa9_0/lib -o "ece315lab4.elf"  ./src/lab4_main.o ./src/stepper.o ./src/uart_initialize.o   -lm -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group
+'Finished building target: ece315lab4.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size ece315lab4.elf  |tee "ece315lab4.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 105108	   3540	  89648	 198296	  30698	ece315lab4.elf
+'Finished building: ece315lab4.elf.size'
+' '
+16:21:04 **** Incremental Build of configuration Debug for project ece315lab4 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+16:21:46 **** Auto Build of configuration Debug for project ece315lab4 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/lab4_main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/lab4_main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ece315lab4_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/lab4_main.d" -MT"src/lab4_main.o" -o "src/lab4_main.o" "../src/lab4_main.c"
+'Finished building: ../src/lab4_main.c'
+' '
+'Building target: ece315lab4.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ece315lab4_bsp/ps7_cortexa9_0/lib -o "ece315lab4.elf"  ./src/lab4_main.o ./src/stepper.o ./src/uart_initialize.o   -lm -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group
+'Finished building target: ece315lab4.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size ece315lab4.elf  |tee "ece315lab4.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 105108	   3540	  89648	 198296	  30698	ece315lab4.elf
+'Finished building: ece315lab4.elf.size'
+' '
+16:21:49 **** Incremental Build of configuration Debug for project ece315lab4 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+16:30:47 **** Auto Build of configuration Debug for project ece315lab4 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/lab4_main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/lab4_main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ece315lab4_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/lab4_main.d" -MT"src/lab4_main.o" -o "src/lab4_main.o" "../src/lab4_main.c"
+'Finished building: ../src/lab4_main.c'
+' '
+'Building target: ece315lab4.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ece315lab4_bsp/ps7_cortexa9_0/lib -o "ece315lab4.elf"  ./src/lab4_main.o ./src/stepper.o ./src/uart_initialize.o   -lm -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group
+'Finished building target: ece315lab4.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size ece315lab4.elf  |tee "ece315lab4.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 105156	   3540	  89648	 198344	  306c8	ece315lab4.elf
+'Finished building: ece315lab4.elf.size'
+' '
+16:31:29 **** Auto Build of configuration Debug for project ece315lab4 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/lab4_main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/lab4_main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ece315lab4_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/lab4_main.d" -MT"src/lab4_main.o" -o "src/lab4_main.o" "../src/lab4_main.c"
+'Finished building: ../src/lab4_main.c'
+' '
+'Building target: ece315lab4.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ece315lab4_bsp/ps7_cortexa9_0/lib -o "ece315lab4.elf"  ./src/lab4_main.o ./src/stepper.o ./src/uart_initialize.o   -lm -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group
+'Finished building target: ece315lab4.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size ece315lab4.elf  |tee "ece315lab4.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 105252	   3540	  89648	 198440	  30728	ece315lab4.elf
+'Finished building: ece315lab4.elf.size'
+' '
+16:31:32 **** Incremental Build of configuration Debug for project ece315lab4 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+16:34:12 **** Auto Build of configuration Debug for project ece315lab4 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/lab4_main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/lab4_main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ece315lab4_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/lab4_main.d" -MT"src/lab4_main.o" -o "src/lab4_main.o" "../src/lab4_main.c"
+'Finished building: ../src/lab4_main.c'
+' '
+'Building target: ece315lab4.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ece315lab4_bsp/ps7_cortexa9_0/lib -o "ece315lab4.elf"  ./src/lab4_main.o ./src/stepper.o ./src/uart_initialize.o   -lm -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group
+'Finished building target: ece315lab4.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size ece315lab4.elf  |tee "ece315lab4.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 105156	   3540	  89648	 198344	  306c8	ece315lab4.elf
+'Finished building: ece315lab4.elf.size'
+' '
+16:34:15 **** Incremental Build of configuration Debug for project ece315lab4 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+16:35:13 **** Auto Build of configuration Debug for project ece315lab4 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/lab4_main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/lab4_main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ece315lab4_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/lab4_main.d" -MT"src/lab4_main.o" -o "src/lab4_main.o" "../src/lab4_main.c"
+'Finished building: ../src/lab4_main.c'
+' '
+'Building target: ece315lab4.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ece315lab4_bsp/ps7_cortexa9_0/lib -o "ece315lab4.elf"  ./src/lab4_main.o ./src/stepper.o ./src/uart_initialize.o   -lm -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group
+'Finished building target: ece315lab4.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size ece315lab4.elf  |tee "ece315lab4.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 105180	   3540	  89648	 198368	  306e0	ece315lab4.elf
+'Finished building: ece315lab4.elf.size'
+' '
+16:35:19 **** Auto Build of configuration Debug for project ece315lab4 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/lab4_main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/lab4_main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ece315lab4_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/lab4_main.d" -MT"src/lab4_main.o" -o "src/lab4_main.o" "../src/lab4_main.c"
+'Finished building: ../src/lab4_main.c'
+' '
+'Building target: ece315lab4.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ece315lab4_bsp/ps7_cortexa9_0/lib -o "ece315lab4.elf"  ./src/lab4_main.o ./src/stepper.o ./src/uart_initialize.o   -lm -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group
+'Finished building target: ece315lab4.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size ece315lab4.elf  |tee "ece315lab4.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 105180	   3540	  89648	 198368	  306e0	ece315lab4.elf
+'Finished building: ece315lab4.elf.size'
+' '
+16:35:24 **** Auto Build of configuration Debug for project ece315lab4 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/lab4_main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/lab4_main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ece315lab4_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/lab4_main.d" -MT"src/lab4_main.o" -o "src/lab4_main.o" "../src/lab4_main.c"
+'Finished building: ../src/lab4_main.c'
+' '
+'Building target: ece315lab4.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ece315lab4_bsp/ps7_cortexa9_0/lib -o "ece315lab4.elf"  ./src/lab4_main.o ./src/stepper.o ./src/uart_initialize.o   -lm -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group
+'Finished building target: ece315lab4.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size ece315lab4.elf  |tee "ece315lab4.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 105180	   3540	  89648	 198368	  306e0	ece315lab4.elf
+'Finished building: ece315lab4.elf.size'
+' '
+16:35:57 **** Incremental Build of configuration Debug for project ece315lab4 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+16:36:52 **** Auto Build of configuration Debug for project ece315lab4 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/lab4_main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/lab4_main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ece315lab4_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/lab4_main.d" -MT"src/lab4_main.o" -o "src/lab4_main.o" "../src/lab4_main.c"
+'Finished building: ../src/lab4_main.c'
+' '
+'Building target: ece315lab4.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ece315lab4_bsp/ps7_cortexa9_0/lib -o "ece315lab4.elf"  ./src/lab4_main.o ./src/stepper.o ./src/uart_initialize.o   -lm -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group
+'Finished building target: ece315lab4.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size ece315lab4.elf  |tee "ece315lab4.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 105180	   3540	  89648	 198368	  306e0	ece315lab4.elf
+'Finished building: ece315lab4.elf.size'
+' '
+16:36:55 **** Incremental Build of configuration Debug for project ece315lab4 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+16:37:56 **** Incremental Build of configuration Debug for project ece315lab4 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+16:38:52 **** Incremental Build of configuration Debug for project ece315lab4 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+16:39:36 **** Auto Build of configuration Debug for project ece315lab4 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/lab4_main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/lab4_main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ece315lab4_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/lab4_main.d" -MT"src/lab4_main.o" -o "src/lab4_main.o" "../src/lab4_main.c"
+'Finished building: ../src/lab4_main.c'
+' '
+'Building target: ece315lab4.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ece315lab4_bsp/ps7_cortexa9_0/lib -o "ece315lab4.elf"  ./src/lab4_main.o ./src/stepper.o ./src/uart_initialize.o   -lm -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group
+'Finished building target: ece315lab4.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size ece315lab4.elf  |tee "ece315lab4.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 105244	   3540	  89648	 198432	  30720	ece315lab4.elf
+'Finished building: ece315lab4.elf.size'
+' '
+16:39:44 **** Auto Build of configuration Debug for project ece315lab4 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/lab4_main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/lab4_main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ece315lab4_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/lab4_main.d" -MT"src/lab4_main.o" -o "src/lab4_main.o" "../src/lab4_main.c"
+'Finished building: ../src/lab4_main.c'
+' '
+'Building target: ece315lab4.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ece315lab4_bsp/ps7_cortexa9_0/lib -o "ece315lab4.elf"  ./src/lab4_main.o ./src/stepper.o ./src/uart_initialize.o   -lm -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group
+'Finished building target: ece315lab4.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size ece315lab4.elf  |tee "ece315lab4.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 105108	   3540	  89648	 198296	  30698	ece315lab4.elf
+'Finished building: ece315lab4.elf.size'
+' '
+16:39:48 **** Incremental Build of configuration Debug for project ece315lab4 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+16:40:57 **** Auto Build of configuration Debug for project ece315lab4 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/lab4_main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/lab4_main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ece315lab4_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/lab4_main.d" -MT"src/lab4_main.o" -o "src/lab4_main.o" "../src/lab4_main.c"
+'Finished building: ../src/lab4_main.c'
+' '
+'Building target: ece315lab4.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ece315lab4_bsp/ps7_cortexa9_0/lib -o "ece315lab4.elf"  ./src/lab4_main.o ./src/stepper.o ./src/uart_initialize.o   -lm -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group
+'Finished building target: ece315lab4.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size ece315lab4.elf  |tee "ece315lab4.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 105108	   3540	  89648	 198296	  30698	ece315lab4.elf
+'Finished building: ece315lab4.elf.size'
+' '
+16:41:03 **** Incremental Build of configuration Debug for project ece315lab4 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+16:09:10 **** Incremental Build of configuration Debug for project ece315lab4 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+16:18:03 **** Auto Build of configuration Debug for project ece315lab4 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/lab4_main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/lab4_main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ece315lab4_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/lab4_main.d" -MT"src/lab4_main.o" -o "src/lab4_main.o" "../src/lab4_main.c"
+'Finished building: ../src/lab4_main.c'
+' '
+'Building target: ece315lab4.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ece315lab4_bsp/ps7_cortexa9_0/lib -o "ece315lab4.elf"  ./src/lab4_main.o ./src/stepper.o ./src/uart_initialize.o   -lm -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group
+'Finished building target: ece315lab4.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size ece315lab4.elf  |tee "ece315lab4.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 105108	   3540	  89648	 198296	  30698	ece315lab4.elf
+'Finished building: ece315lab4.elf.size'
+' '
+16:18:17 **** Incremental Build of configuration Debug for project ece315lab4 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+16:19:54 **** Auto Build of configuration Debug for project ece315lab4 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/lab4_main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/lab4_main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ece315lab4_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/lab4_main.d" -MT"src/lab4_main.o" -o "src/lab4_main.o" "../src/lab4_main.c"
+'Finished building: ../src/lab4_main.c'
+' '
+'Building target: ece315lab4.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ece315lab4_bsp/ps7_cortexa9_0/lib -o "ece315lab4.elf"  ./src/lab4_main.o ./src/stepper.o ./src/uart_initialize.o   -lm -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group
+'Finished building target: ece315lab4.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size ece315lab4.elf  |tee "ece315lab4.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 105108	   3540	  89648	 198296	  30698	ece315lab4.elf
+'Finished building: ece315lab4.elf.size'
+' '
+16:58:10 **** Auto Build of configuration Debug for project ece315lab4 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/lab4_main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/lab4_main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ece315lab4_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/lab4_main.d" -MT"src/lab4_main.o" -o "src/lab4_main.o" "../src/lab4_main.c"
+'Finished building: ../src/lab4_main.c'
+' '
+'Building target: ece315lab4.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ece315lab4_bsp/ps7_cortexa9_0/lib -o "ece315lab4.elf"  ./src/lab4_main.o ./src/stepper.o ./src/uart_initialize.o   -lm -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group
+'Finished building target: ece315lab4.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size ece315lab4.elf  |tee "ece315lab4.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 105108	   3540	  89648	 198296	  30698	ece315lab4.elf
+'Finished building: ece315lab4.elf.size'
+' '
+16:58:14 **** Incremental Build of configuration Debug for project ece315lab4 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+17:00:11 **** Auto Build of configuration Debug for project ece315lab4 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/lab4_main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/lab4_main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ece315lab4_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/lab4_main.d" -MT"src/lab4_main.o" -o "src/lab4_main.o" "../src/lab4_main.c"
+'Finished building: ../src/lab4_main.c'
+' '
+'Building target: ece315lab4.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ece315lab4_bsp/ps7_cortexa9_0/lib -o "ece315lab4.elf"  ./src/lab4_main.o ./src/stepper.o ./src/uart_initialize.o   -lm -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group
+'Finished building target: ece315lab4.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size ece315lab4.elf  |tee "ece315lab4.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 105108	   3540	  89648	 198296	  30698	ece315lab4.elf
+'Finished building: ece315lab4.elf.size'
+' '
+17:01:43 **** Auto Build of configuration Debug for project ece315lab4 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/lab4_main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/lab4_main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ece315lab4_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/lab4_main.d" -MT"src/lab4_main.o" -o "src/lab4_main.o" "../src/lab4_main.c"
+'Finished building: ../src/lab4_main.c'
+' '
+'Building target: ece315lab4.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ece315lab4_bsp/ps7_cortexa9_0/lib -o "ece315lab4.elf"  ./src/lab4_main.o ./src/stepper.o ./src/uart_initialize.o   -lm -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group
+'Finished building target: ece315lab4.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size ece315lab4.elf  |tee "ece315lab4.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 105108	   3540	  89648	 198296	  30698	ece315lab4.elf
+'Finished building: ece315lab4.elf.size'
+' '
+17:02:53 **** Auto Build of configuration Debug for project ece315lab4 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/lab4_main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/lab4_main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ece315lab4_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/lab4_main.d" -MT"src/lab4_main.o" -o "src/lab4_main.o" "../src/lab4_main.c"
+'Finished building: ../src/lab4_main.c'
+' '
+'Building target: ece315lab4.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ece315lab4_bsp/ps7_cortexa9_0/lib -o "ece315lab4.elf"  ./src/lab4_main.o ./src/stepper.o ./src/uart_initialize.o   -lm -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group
+'Finished building target: ece315lab4.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size ece315lab4.elf  |tee "ece315lab4.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 105172	   3540	  89648	 198360	  306d8	ece315lab4.elf
+'Finished building: ece315lab4.elf.size'
+' '
+17:02:59 **** Incremental Build of configuration Debug for project ece315lab4 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+17:04:15 **** Auto Build of configuration Debug for project ece315lab4 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/lab4_main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/lab4_main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ece315lab4_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/lab4_main.d" -MT"src/lab4_main.o" -o "src/lab4_main.o" "../src/lab4_main.c"
+'Finished building: ../src/lab4_main.c'
+' '
+'Building target: ece315lab4.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ece315lab4_bsp/ps7_cortexa9_0/lib -o "ece315lab4.elf"  ./src/lab4_main.o ./src/stepper.o ./src/uart_initialize.o   -lm -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group
+'Finished building target: ece315lab4.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size ece315lab4.elf  |tee "ece315lab4.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 105172	   3540	  89648	 198360	  306d8	ece315lab4.elf
+'Finished building: ece315lab4.elf.size'
+' '
+17:04:23 **** Incremental Build of configuration Debug for project ece315lab4 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+17:06:55 **** Auto Build of configuration Debug for project ece315lab4 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/lab4_main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/lab4_main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ece315lab4_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/lab4_main.d" -MT"src/lab4_main.o" -o "src/lab4_main.o" "../src/lab4_main.c"
+'Finished building: ../src/lab4_main.c'
+' '
+'Building target: ece315lab4.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ece315lab4_bsp/ps7_cortexa9_0/lib -o "ece315lab4.elf"  ./src/lab4_main.o ./src/stepper.o ./src/uart_initialize.o   -lm -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group
+'Finished building target: ece315lab4.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size ece315lab4.elf  |tee "ece315lab4.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 105172	   3540	  89648	 198360	  306d8	ece315lab4.elf
+'Finished building: ece315lab4.elf.size'
+' '
+17:07:31 **** Auto Build of configuration Debug for project ece315lab4 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/lab4_main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/lab4_main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ece315lab4_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/lab4_main.d" -MT"src/lab4_main.o" -o "src/lab4_main.o" "../src/lab4_main.c"
+'Finished building: ../src/lab4_main.c'
+' '
+'Building target: ece315lab4.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ece315lab4_bsp/ps7_cortexa9_0/lib -o "ece315lab4.elf"  ./src/lab4_main.o ./src/stepper.o ./src/uart_initialize.o   -lm -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group
+'Finished building target: ece315lab4.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size ece315lab4.elf  |tee "ece315lab4.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 105172	   3540	  89648	 198360	  306d8	ece315lab4.elf
+'Finished building: ece315lab4.elf.size'
+' '
+17:07:36 **** Incremental Build of configuration Debug for project ece315lab4 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+17:09:56 **** Incremental Build of configuration Debug for project ece315lab4 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+17:13:42 **** Auto Build of configuration Debug for project ece315lab4 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/lab4_main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/lab4_main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ece315lab4_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/lab4_main.d" -MT"src/lab4_main.o" -o "src/lab4_main.o" "../src/lab4_main.c"
+'Finished building: ../src/lab4_main.c'
+' '
+'Building target: ece315lab4.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ece315lab4_bsp/ps7_cortexa9_0/lib -o "ece315lab4.elf"  ./src/lab4_main.o ./src/stepper.o ./src/uart_initialize.o   -lm -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group
+'Finished building target: ece315lab4.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size ece315lab4.elf  |tee "ece315lab4.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 105236	   3540	  89648	 198424	  30718	ece315lab4.elf
+'Finished building: ece315lab4.elf.size'
+' '
+17:13:47 **** Auto Build of configuration Debug for project ece315lab4 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/lab4_main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/lab4_main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ece315lab4_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/lab4_main.d" -MT"src/lab4_main.o" -o "src/lab4_main.o" "../src/lab4_main.c"
+'Finished building: ../src/lab4_main.c'
+' '
+'Building target: ece315lab4.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ece315lab4_bsp/ps7_cortexa9_0/lib -o "ece315lab4.elf"  ./src/lab4_main.o ./src/stepper.o ./src/uart_initialize.o   -lm -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group
+'Finished building target: ece315lab4.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size ece315lab4.elf  |tee "ece315lab4.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 105236	   3540	  89648	 198424	  30718	ece315lab4.elf
+'Finished building: ece315lab4.elf.size'
+' '
+17:13:51 **** Incremental Build of configuration Debug for project ece315lab4 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+17:14:41 **** Auto Build of configuration Debug for project ece315lab4 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/lab4_main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/lab4_main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ece315lab4_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/lab4_main.d" -MT"src/lab4_main.o" -o "src/lab4_main.o" "../src/lab4_main.c"
+'Finished building: ../src/lab4_main.c'
+' '
+'Building target: ece315lab4.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ece315lab4_bsp/ps7_cortexa9_0/lib -o "ece315lab4.elf"  ./src/lab4_main.o ./src/stepper.o ./src/uart_initialize.o   -lm -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group
+'Finished building target: ece315lab4.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size ece315lab4.elf  |tee "ece315lab4.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 105236	   3540	  89648	 198424	  30718	ece315lab4.elf
+'Finished building: ece315lab4.elf.size'
+' '
+17:14:47 **** Incremental Build of configuration Debug for project ece315lab4 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+17:40:31 **** Auto Build of configuration Debug for project ece315lab4 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+17:41:07 **** Auto Build of configuration Debug for project ece315lab4 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/lab4_main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/lab4_main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ece315lab4_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/lab4_main.d" -MT"src/lab4_main.o" -o "src/lab4_main.o" "../src/lab4_main.c"
+'Finished building: ../src/lab4_main.c'
+' '
+'Building target: ece315lab4.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ece315lab4_bsp/ps7_cortexa9_0/lib -o "ece315lab4.elf"  ./src/lab4_main.o ./src/stepper.o ./src/uart_initialize.o   -lm -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group
+'Finished building target: ece315lab4.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size ece315lab4.elf  |tee "ece315lab4.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 105172	   3540	  89648	 198360	  306d8	ece315lab4.elf
+'Finished building: ece315lab4.elf.size'
+' '
+17:41:19 **** Incremental Build of configuration Debug for project ece315lab4 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+17:42:36 **** Auto Build of configuration Debug for project ece315lab4 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/lab4_main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/lab4_main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../ece315lab4_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/lab4_main.d" -MT"src/lab4_main.o" -o "src/lab4_main.o" "../src/lab4_main.c"
+'Finished building: ../src/lab4_main.c'
+' '
+'Building target: ece315lab4.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../ece315lab4_bsp/ps7_cortexa9_0/lib -o "ece315lab4.elf"  ./src/lab4_main.o ./src/stepper.o ./src/uart_initialize.o   -lm -Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group
+'Finished building target: ece315lab4.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size ece315lab4.elf  |tee "ece315lab4.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 105252	   3540	  89648	 198440	  30728	ece315lab4.elf
+'Finished building: ece315lab4.elf.size'
+' '
+17:43:02 **** Incremental Build of configuration Debug for project ece315lab4 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+17:44:13 **** Incremental Build of configuration Debug for project ece315lab4 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.

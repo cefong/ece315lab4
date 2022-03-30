@@ -1,6 +1,2 @@
    text	   data	    bss	    dec	    hex	filename
-<<<<<<< HEAD
- 104980	   3540	  89648	 198168	  30618	ece315lab4.elf
-=======
- 104852	   3540	  89648	 198040	  30598	ece315lab4.elf
->>>>>>> 0ce3d198441b8ac91a185b03f1312056a03c59ac
+ 105252	   3540	  89648	 198440	  30728	ece315lab4.elf
